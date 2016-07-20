@@ -169,12 +169,25 @@ namespace Yourdbxrescue {
                 Int64 nextpos = fs.Position;
                 Int64 maxpos = fs.Length;
                 Stat3 s3 = new Stat3();
+                byte[] chk = new byte[2048];
                 while (nextpos + 16 < maxpos) {
-                    Int64 pos = nextpos;
                     fs.Position = nextpos;
+                    int cx = fs.Read(chk, 0, chk.Length) & (~3);
+                    if (cx == 0)
+                        break;
+                    int x = 0;
+                    uint marker;
+                    do {
+                        if ((marker = BitConverter.ToUInt32(chk, x)) == (uint)(nextpos + x))
+                            break;
+                        x += 4;
+                    } while (x < cx);
+                    nextpos += x;
+                    if (x == cx) {
+                        continue;
+                    }
                     nextpos += 4;
-                    uint marker = br.ReadUInt32();
-                    if (pos != marker) continue;
+                    fs.Position = nextpos;
                     uint bodySize = br.ReadUInt32();
                     uint usedSize = br.ReadUInt32();
                     uint nextAddr = br.ReadUInt32();

@@ -8,8 +8,9 @@
 ;--------------------------------
 
 !define APP "Yourdbxrescue"
-!define VER "0.1"
-!define APV "0_1"
+!system 'DefineAsmVer.exe "bin\Release\${APP}.exe" "!define VER ""[SVER]"" " > Tmpver.nsh'
+!include "Tmpver.nsh"
+!searchreplace APV ${VER} "." "_"
 
 ; bin\x86\DEBUG
 
