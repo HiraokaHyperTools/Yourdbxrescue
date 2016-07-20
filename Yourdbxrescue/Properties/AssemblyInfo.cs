@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("HIRAOKA HYPERS TOOLS, Inc.")]
 [assembly: AssemblyProduct("Yourdbxrescue")]
-[assembly: AssemblyCopyright("Copyright (C) HIRAOKA HYPERS TOOLS, Inc. 2015")]
+[assembly: AssemblyCopyright("Copyright (C) HIRAOKA HYPERS TOOLS, Inc. 2015, 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -29,5 +29,5 @@ using System.Runtime.InteropServices;
 //      Build Number
 //      Revision
 //
-[assembly: AssemblyVersion("0.1.0.0")]//here
-[assembly: AssemblyFileVersion("0.1.0.0")]//here
+[assembly:     AssemblyVersion("0.2.0.0")]//here
+[assembly: AssemblyFileVersion("0.2.0.0")]//here
