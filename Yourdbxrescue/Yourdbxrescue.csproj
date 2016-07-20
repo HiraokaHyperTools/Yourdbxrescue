@@ -87,6 +87,7 @@
     <Compile Include="UtExplodeDbx.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="wip.gif" />
     <None Include="warn.png" />
     <None Include="info.png" />
